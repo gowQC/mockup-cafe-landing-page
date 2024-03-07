@@ -61,20 +61,24 @@ hr {
 figure {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
-    height: 500px;
+    height: 500px; /*height declared for vertical partitions between images*/
 }
 
 figcaption {
     margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 1.4em;
     font-weight: bold;
 }
 
 select {
     background-color: #ffd1b3;
+}
+
+@media (max-width: 768px) {
+    body { /*remove margins when entering tablet view*/
+        margin: 0px;
+    }
 }
 /*End of CSS for standard tags*/
 
@@ -89,10 +93,11 @@ select {
     width: 20%;
     display: flex;
     flex-direction: column;
-    /*justify-content:space-evenly;*/
 }
 
 #logo {
+    width: 215px;
+    height: 175px;
     border: 8px solid;
     border-color: rgb(112, 26, 26);
     border-radius: 50px;
@@ -130,9 +135,21 @@ ul.navMenu > li {
 }
 
 #map {
+    width: 250px;
+    height: 200px;
     border: 5px solid rgb(112, 26, 26);
     border-radius: 20px;
-    margin: 50px auto 20px;
+    margin: 25px auto 20px;
+}
+
+#mapMobile {
+    display: none;
+    width: 250px;
+    height: 200px;
+    border: 5px solid rgb(112, 26, 26);
+    border-radius: 20px;
+    margin: 25px auto 0px;
+    background-color: black;
 }
 
 .footerMenu {
@@ -152,6 +169,159 @@ ul.footerMenu > li {
     width: 100%;
     font-size: .96em;
 }
+
+
+#navFooterMobile {
+    display: none;
+    background-color: black;
+    padding-bottom: 25px;
+}
+
+.footerMenuMobile {
+    height: auto;
+    width: 100%;
+    background-color: rgb(112, 26, 26);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+ul.footerMenuMobile > li {
+    list-style-type: none;
+    width: 100%;
+    font-size: .96em;
+}
+
+@media (max-width: 1400px) {
+    #map {
+        width: 200px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 1160px) {
+    #logo {
+        width: 175px;
+        height: 140px;
+    }
+    #map {
+        width: 175px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1040px) {
+    ul.navMenu > li {
+        font-size: .92em;
+    }
+    ul.footerMenu > li {
+        font-size: .9em;
+    }
+
+}
+
+@media (max-width: 956px) {
+    #map {
+        width: 140px;
+    }
+    #logo {
+        width: 140px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 956px) {
+    #map {
+        width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    #navFooter {
+        display: none;
+    }
+    #navFooterMobile {
+        display: block;
+    }
+
+    #map {
+        display: none;
+    }
+    #mapMobile {
+        display: block;
+    }
+
+    #logo {
+        width: 230px;
+        height: 170px;
+    }
+    .navContainer {
+        border-right: none;
+        position: sticky;
+        right: 0;
+        height: auto;
+        width: 100%; /*width changing from 20% to 100% once entering tablet view*/
+    }
+    .navMenu {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2px;
+    }    
+    .navButton {
+        border-bottom: none;
+        border-right: 1px solid black;
+    }
+    .navMenu > li:last-child > a > .navButton  {
+        border-right: none;
+    }
+}
+
+@media (max-width: 580px) {
+    #logo {
+        width: 200px;
+        height: 150px;
+        border-width: 6px;
+    }
+    .navButton {
+        font-size: 1.3em;
+    }
+    .footerMenuMobile {
+        font-size: .93em;
+    }
+    #mapMobile {
+        width: 220px;
+        height: 170px;
+    }
+}
+
+@media (max-width: 420px) {
+    #logo {
+        width: 180px;
+        height: 140px;
+    }
+    .navButton {
+        font-size: 1.1em;
+    }
+    .footerMenuMobile {
+        font-size: .79em;
+    }
+    #mapMobile {
+        width: 170px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 354px) {
+    #logo {
+        width: 160px;
+        height: 120px;
+        border-width: 4px;
+    }
+    .navButton {
+        font-size: .9em;
+    }
+}
+
 /*End of CSS for nav elements*/
 
 /*Start of CSS for main content*/
@@ -166,6 +336,68 @@ ul.footerMenu > li {
     right: 0;
     height: auto; /*set to auto for gradiant color*/
     width: 80%;
+}
+
+#disclaimer {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #content{
+        display: fixed;
+        width: 100%;
+        top: 18em; /* aligns content directly underneath nav menu */
+    }
+
+    #disclaimer { 
+        font-size: .90em;       
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+@media (max-width: 580px) {
+    #content {
+        top: 16.77em;
+    }
+
+    #disclaimer { 
+        font-size: .75em;       
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 420px) {
+    #content {
+        top: 16.1em;
+    }
+
+    #disclaimer { 
+        font-size: .64em;       
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 354px) {
+    #content {
+        top: 14.9em;
+    }
+
+    #disclaimer { 
+        font-size: .58em;       
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
 }
 
 /*CSS for total cart*/
@@ -190,7 +422,7 @@ ul.footerMenu > li {
     position: fixed;
     height: 70%;
     width: 20%;
-    top: 8vw;
+    top: 9vw;
     right: 0;
     border: 2px solid black;
     background-color: rgb(112, 26, 26);
@@ -207,7 +439,7 @@ ul.footerMenu > li {
     visibility: visible !important;
 }
 
-@keyframes slideLeft {
+@keyframes slideOut {
     0% {
         width: 0;
     }
@@ -216,7 +448,7 @@ ul.footerMenu > li {
     }
 }
 
-@keyframes slideRight {
+@keyframes slideIn {
     0% {
         width: 20%;
     }
@@ -283,6 +515,111 @@ ul.footerMenu > li {
     border-top: 1px solid black;
     cursor: pointer;
     border-radius: 0px 0px 0px 15px;
+}
+
+@media (max-width: 1470px) {
+    .cartSidebar {
+        top: 11vw;
+    }
+}
+
+@media (max-width: 1208px) {
+    .cartSidebar {
+        top: 13vw;
+    }
+}
+
+@media (max-width: 1030px) {
+    #cart {
+        height: 60px;
+        width: 60px;
+    }
+
+    .cartSidebar {
+        top: 15vw;
+    }
+}
+
+@media (max-width: 874px) {
+    .cartSidebar {
+        top: 17vw;
+    }
+}
+
+@media (max-width: 768px) {
+    #cart {
+        margin-top: 70px;
+        margin-right: 70px;
+        height: 75px;
+        width: 75px;
+    }
+
+    .cartSidebar {
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: 0;
+        width: 80%;
+        height: 65%;
+        margin-left: 10vw;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+    }
+
+    #checkout {
+        border-radius: 0px;
+    }
+
+    @keyframes slideOut {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 65%;
+        }
+    }
+    
+    @keyframes slideIn {
+        0% {
+            height: 65%;
+        }
+        100% {
+            height: 0;
+        }
+    }
+}
+
+@media(max-width: 672px) {
+    #cart {
+        height: 65px;
+        width: 65px;
+        margin-right: 45px;
+    }
+}
+
+@media(max-width: 580px) {
+    #cart {
+        height: 55px;
+        width: 55px;
+        margin-right: 45px;
+    }
+}
+
+@media(max-width: 472px) {
+    #cart {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+    }
+}
+
+@media(max-width: 384px) {
+    #cart {
+        height: 50px;
+        width: 50px;
+        margin-right: 0px;
+    }
 }
 
     /*CSS for menu elements*/
@@ -425,20 +762,273 @@ ul.footerMenu > li {
             opacity: 1;
         }
     }
+
+    @media (max-width: 1340px) {
+        .menuItem > p {
+            font-size: 22px;
+            width: 225px;
+        }
+    
+        .menuItem > img {
+            border: 4px inset rgb(112, 26, 26);
+            width: 250px;
+            height: 225px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 1240px) {
+        .menuItem > p {
+            font-size: 20px;
+            width: 200px;
+        }
+    
+        .menuItem > img {
+            width: 225px;
+            height: 200px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 17px;
+        }
+    }
+
+    @media (max-width: 1120px) {
+        .menuItem > p {
+            font-size: 17px;
+            width: 175px;
+        }
+    
+        .menuItem > img {
+            width: 200px;
+            height: 175px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .menuItem > p {
+            font-size: 15px;
+            width: 150px;
+        }
+    
+        .menuItem > img {
+            width: 175px;
+            height: 150px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 890px) {
+        .menuItem > p {
+            font-size: 14px;
+            width: 150px;
+        }
+    
+        .menuItem > img {
+            width: 150px;
+            height: 125px;
+            border-radius: 35%;
+        }
+    
+        .menuItem > p.description {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menuChangeContainer > h2 {
+            font-size: 25px;
+        }
+
+        .menuButton {
+            border: 2px solid;
+            height: 35px;
+            border-radius: 30px;
+            font-size: .75em;
+        }
+
+        #menuCategory {
+            height: 55px;
+        }
+    }
+
+    @media (max-width: 672px) {
+        .menuItem {
+            margin: 0px;
+        }
+
+        .menuItem > p {
+            font-size: 12px;
+            width: 120px;
+        }
+    
+        .menuItem > img {
+            width: 120px;
+            height: 100px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .menuChangeContainer > h2 {
+            font-size: 22px;
+        }
+
+        .menuButton {
+            height: 31px;
+            border-radius: 15px;
+            font-size: .6em;
+        }
+
+        #menuCategory {
+            height: 50px;
+            width: 150px;
+        }
+
+        .dot {
+            height: 20px;
+            width: 20px;
+        }
+
+        .menuItem > p {
+            font-size: 11px;
+            width: 110px;
+        }
+    
+        .menuItem > img {
+            width: 110px;
+            height: 85px;
+        }
+    
+        .menuItem > p.description {
+            font-size: 10px;
+        }
+
+        select {
+            font-size: 0.9em;
+        }
+        
+        .cartButton > i {
+            font-size: 0.7em;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .menuItem > p {
+            font-size: 10px;
+            width: 100px;
+        }
+    
+        .menuItem > img {
+            width: 100px;
+        }
+
+        select {
+            font-size: 0.87em;
+        }
+        
+        .cartButton > i {
+            font-size: 0.67em;
+        }
+    }
+
+    @media (max-width: 482px) {
+        .menuItem > p {
+            font-size: 9px;
+            width: 90px;
+        }
+    
+        .menuItem > img {
+            width: 90px;
+            height: 85px;
+        }
+
+        .menuItem > p.description {
+            width: 100px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .menuChangeContainer > h2 {
+            font-size: 17px;
+        }
+
+        .menuButton {
+            height: 26px;
+            font-size: .47em;
+        }
+
+        #menuCategory {
+            height: 45px;
+            width: 110px;
+        }
+
+        .dot {
+            height: 17px;
+            width: 17px;
+        }
+    }
+
+    @media (max-width: 354px) {
+        .menuChangeContainer > h2 {
+            font-size: 14px;
+        }
+
+        .menuButton {
+            height: 23px;
+            font-size: .34em;
+        }
+
+        #menuCategory {
+            height: 40px;
+            width: 90px;
+        }
+
+        .dot {
+            height: 14px;
+            width: 14px;
+        }
+
+        .menuItem > p {
+            font-size: 8px;
+            width: 85px;
+        }
+    
+        .menuItem > img {
+            width: 85px;
+            height: 80px;
+        }
+
+        .cartButton > i {
+            font-size: 0.59em;
+        }
+    }
     /*End of CSS for menu elements*/
 
     /*Start of CSS for gallery elements*/
     #gallery {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        /* justify-content: center; */
     }
 
-    .galleryRow {
+    .galleryContainer {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
-        margin-top: 20px;
+        justify-content: space-between;
         height: auto;
     }
     
@@ -449,13 +1039,192 @@ ul.footerMenu > li {
         flex-direction: column;
         justify-content: center;
         margin: auto 0px;
+        opacity: 30%;
       }
 
-    .galleryRow > img {
+    .galleryContainer > img {
         height: 400px;
         width: 400px;
         border-radius: 45px;
         box-shadow: 10px 5px 5px rgb(112, 26, 26);
+    }
+
+    @media (max-width: 1740px) {
+        .galleryContainer > img {
+            height: 340px;
+            width: 340px;
+        }
+
+        figure {
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 1580px) {
+        .galleryContainer > img {
+            height: 300px;
+            width: 300px;
+        }
+
+        figure {
+            height: 360px;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        .galleryContainer > img {
+            height: 270px;
+            width: 270px;
+        }
+
+        figure {
+            height: 320px;
+        }
+
+        figcaption {
+            font-size: 1.2em;
+        }
+    }
+
+    @media (max-width: 1240px) {
+        .galleryContainer > img {
+            height: 240px;
+            width: 240px;
+        }
+
+        figure {
+            height: 320px;
+        }
+    }
+
+    @media (max-width: 1120px) {
+        .galleryContainer > img {
+            width: 220px;
+        }
+
+        figcaption {
+            font-size: 1.1em;
+        }
+
+        .vl {
+            display: none;
+        }
+
+        figure {
+            height: fit-content;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .galleryContainer > img {
+            width: 200px;
+            height: 210px;
+        }
+    }
+
+    @media (max-width: 890px) {
+        .galleryContainer > img {
+            width: 165px;
+        }
+
+        figcaption {
+            font-size: 1em;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .galleryContainer > img {
+            width: 190px;
+            height: 230px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .galleryContainer > img {
+            width: 165px;
+            height: 220px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .galleryContainer > img {
+            width: 145px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .galleryContainer > img {
+            width: 135px;
+            height: 190px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .galleryContainer > img {
+            width: 115px;
+            height: 155px;
+        }
+
+        figure {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+        }
+    }
+
+    @media (max-width: 454px) {
+        .galleryContainer > img {
+            width: 105px;
+            height: 135px;
+        }
+
+        figcaption {
+            font-size: 0.75em;
+        }
+    }
+
+    @media (max-width: 424px) {
+        .galleryContainer > img {
+            width: 95px;
+        }
+
+        figure {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        figcaption {
+            font-size: 0.71em;
+        }
+    }
+
+    @media (max-width: 392px) {
+        .galleryContainer > img {
+            width: 85px;
+        }
+
+        figcaption {
+            font-size: 0.63em;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .galleryContainer > img {
+            width: 80px;
+        }
+
+        figure {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        figcaption {
+            font-size: 0.58em;
+        }
     }
     /*End of CSS of gallery elements*/
 
@@ -463,13 +1232,14 @@ ul.footerMenu > li {
     #aboutUs {
         margin:  20px 0px;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column;
         justify-content: center;
     }
 
     #ownerImage {
-        height: 350px;
-        width: 350px;
+        height: 550px;
+        width: 550px;
+        margin: 0px auto;
         float: right;
         border-radius: 300px;
         box-shadow: 10px 5px 5px rgb(112, 26, 26);
@@ -478,9 +1248,71 @@ ul.footerMenu > li {
     .aboutUsP {
         width: 65%;
         font-size: 1.7em;
-        margin: 20px;
+        margin: 20px auto;
         text-align: center;
         }
+
+    .quote {
+        border: 8px double black;
+    }
+
+    @media (max-width: 1300px) {
+        .aboutUsP {
+            font-size: 1.55em;
+            width: 75%;
+        }
+
+        #ownerImage {
+            height: 450px;
+            width: 450px;
+        }
+    }
+
+    @media (max-width: 1120px) {
+        .aboutUsP {
+            font-size: 1.3em;
+        }
+
+        #ownerImage {
+            height: 400px;
+            width: 400px;
+        }
+    }
+
+    @media (max-width: 890px) {
+        .aboutUsP {
+            font-size: 1.1em;
+            width: 80%;
+        }
+
+        #ownerImage {
+            height: 300px;
+            width: 300px;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .aboutUsP {
+            font-size: 1em;
+            width: 85%;
+        }
+
+        #ownerImage {
+            height: 250px;
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .aboutUsP {
+            font-size: 0.9em;
+        }
+
+        #ownerImage {
+            height: 200px;
+            width: 200px;
+        }
+    }
     /*End of CSS for about us*/
     
     /*Start of CSS for news*/
@@ -525,6 +1357,7 @@ ul.footerMenu > li {
         display: flex;
         flex-direction: row;
         /*scroll-snap-type: x mandatory;*/ /*belongs in container*/
+
         /*firefox scrollbar*/
         scrollbar-width: thin;
         scrollbar-color: rgb(112, 26, 26) black;
@@ -578,5 +1411,98 @@ ul.footerMenu > li {
         border-style: solid;
         border-color: rgb(112, 26, 26);
         border-radius: 0px 0px 20px 20px;
+    }
+
+    @media (max-width: 1120px) {
+        .newsP {
+            font-size: 1.6em;
+        }
+
+        a > img {
+            width: 280px;
+        }
+    
+        a > p {
+            width: 280px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .newsP {
+            font-size: 1.3em;
+        }
+
+        a > img {
+            width: 220px;
+            height: 280px;
+        }
+    
+        a > p {
+            width: 220px;
+        }
+    }
+
+    @media (max-width: 650px) { 
+        .newsP {
+            font-size: 1.2em;
+        }
+
+        a > img {
+            width: 180px;
+            height: 240px;
+        }
+    
+        a > p {
+            width: 180px;
+            font-size: .93em;
+        }
+    }
+
+    @media (max-width: 450px) {
+        .newsP {
+            font-size: 1em;
+        }
+
+        a > img {
+            width: 160px;
+            height: 200px;
+        }
+    
+        a > p {
+            width: 160px;
+            font-size: .85em;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .newsP {
+            font-size: .9em;
+        }
+
+        a > img {
+            width: 150px;
+            height: 160px;
+        }
+    
+        a > p {
+            width: 150px;
+            font-size: .73em;
+        }
+    }
+
+    @media (max-width: 340px) {
+        .newsP {
+            font-size: .85em;
+        }
+
+        a > img {
+            width: 120px;
+            height: 130px;
+        }
+    
+        a > p {
+            width: 120px;
+            font-size: .71em;
+        }
     }
     /*End of CSS for news*/

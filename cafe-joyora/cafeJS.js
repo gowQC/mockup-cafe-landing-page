@@ -7,17 +7,17 @@ let btnID = 0; // used to assign id's to newly made button elements
 
 function cartVisible () {
     if(window.getComputedStyle(cart).visibility == "hidden") {
-        cart.style.animationName = "slideLeft";
+        cart.style.animationName = "slideOut";
         cart.classList.add("showCart");
         //if invisible, turn visible
     }
 
     else {
-        cart.style.animationName = "slideRight";
+        cart.style.animationName = "slideIn";
 
         setTimeout(() => {
             cart.classList.remove("showCart");
-        },1000); //delay used to let animation play out
+        },1005); //delay used to let animation play out
         //if visible, turn back to default which is invisible
     }
 }
@@ -76,23 +76,30 @@ function removeItem (id) {
 }
 
 function checkout(){
-    //remove every element from itemsList
-    while (itemsList.firstChild) {
-        itemsList.removeChild(itemsList.lastChild);
+    //check if cart is empty
+    if (itemsList.firstElementChild.innerHTML == "Your cart is empty... Change that!") {
+        alert("Your cart is empty!");
     }
 
-    //display alert message successful checkout
-    alert("You have successfully checked out! Enjoy your food!")
+    else {
+        //remove every element from itemsList
+        while (itemsList.firstChild) {
+            itemsList.removeChild(itemsList.lastChild);
+        }
 
-    //reset subtotal
-    subTotal = 0.00;
-    displaySubTotal.innerHTML = "$0.00";
+        //display alert message successful checkout
+        alert("You have successfully checked out! Enjoy your food!")
 
-    //insert default message again
-    if (itemsList.childElementCount == 0) {
-        let starterDiv = document.createElement('div');
-        starterDiv.innerHTML = "Your cart is empty... Change that!";
-        itemsList.appendChild(starterDiv);
+        //reset subtotal
+        subTotal = 0.00;
+        displaySubTotal.innerHTML = "$0.00";
+
+        //insert default message again
+        if (itemsList.childElementCount == 0) {
+            let starterDiv = document.createElement('div');
+            starterDiv.innerHTML = "Your cart is empty... Change that!";
+            itemsList.appendChild(starterDiv);
+        }
     }
 }
 //end of JS for cart
@@ -182,7 +189,7 @@ let myInterval;
 //left button
 articleButtonLeft.addEventListener("mousedown", function () {
     myInterval = setInterval(function () {
-        articleContainer.scrollLeft -= 7;
+        articleContainer.scrollLeft -= 12;
     }, 11)
 });
 
@@ -193,7 +200,7 @@ articleButtonLeft.addEventListener("mouseup", function () {
 //right button
 articleButtonRight.addEventListener("mousedown", function () {
     myInterval = setInterval(function () {
-        articleContainer.scrollLeft += 7;
+        articleContainer.scrollLeft += 12;
     }, 11)
 });
 

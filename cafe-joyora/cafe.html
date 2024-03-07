@@ -4,24 +4,24 @@
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Café Joyorra</title>
+    <link rel="icon" type="image/x-icon" href="cafeImages/cafeLogo2.PNG">
 	<link rel="stylesheet" type="text/css" href="cafeStyles.css">
 </head>
 <body>
     <!--nav = 20% of screen-->
     <nav class="navContainer"> 
-        <img id="logo" src="cafeImages/cafeLogo2.PNG" alt="Business' logo" width="215" height="175">
+        <img id="logo" src="cafeImages/cafeLogo2.PNG" alt="Business' logo">
         <ul class="navMenu">
             <li><a href="#gotoMenu"><button class="navButton"><i class="fa-solid fa-utensils" style="color: #000000;"></i> Menu</button></a></li>
             <li><a href="#gotoGallery"><button class="navButton"><i class="fa-solid fa-camera" style="color: #000000;"></i> Gallery</button></a></li>
             <li><a href="#gotoAboutUs"><button class="navButton"><i class="fa-solid fa-users" style="color: #000000;"></i> About Us</button></a></li>
             <li><a href="#gotoNews"><button class="navButton"><i class="fa-solid fa-comments" style="color: #000000;"></i> News</button></a></li>
-            <!--<li><a href="#gotoOrderOnline"><button class="navButton"><i class="fa-solid fa-cookie-bite" style="color: #000000;"></i> Order Online</button></a></li>-->
         </ul>
         <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.634549853865!2d-73.73898302340712!3d40.72606083675385!2m3!1f
         0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2622e2213eb51%3A0x43c6fff9c1d428e7!2s92-05%20Winchester%20Blvd%2C%20Queens%2C%20NY%
-        2011428!5e0!3m2!1sen!2sus!4v1701105873711!5m2!1sen!2sus" width="250" height="200" allowfullscreen="" loading="lazy"
+        2011428!5e0!3m2!1sen!2sus!4v1701105873711!5m2!1sen!2sus" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <footer>
+        <footer id="navFooter">
             <ul class="footerMenu">
                 <li><b>Address:</b> 92-05 Winchester Blvd., Queens Village, NY</li>
                 <li><b>Hours:</b> Monday-Saturday 6AM-11PM, Sunday 9AM-3PM</li>
@@ -37,22 +37,10 @@
 
     <!--main/dynamic content = 80% of screen-->
     <div id="content"> 
-        <div style="text-align: center;">*Disclaimer: images used in this mockup are perfectly legal for non-commercial use.*</div>
+        <div id="disclaimer">*Disclaimer: images used in this mockup are perfectly legal for non-commercial use.*</div>
+        <hr id="gotoMenu">
+        <h1>Menu</h1>
         <hr>
-        <h1 id="gotoMenu">Menu</h1>
-        <hr>
-
-        <!--cart occupies left side of screen, goes invisible and visible-->
-        <button id="cart" onclick="cartVisible()"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #000000;"></i></button>
-        <div class="cartSidebar" id="cartSidebar">
-            <div id="itemsList">
-                <!--will be filled by menu cart buttons (do not remove this comment)-->
-                <div>Your cart is empty... Change that!</div>
-            </div>
-            <div id="displaySubTotal">$0.00</div>
-            <button onclick="checkout()" id="checkout">Checkout!</button>
-        </div>
-        <!--end of cart-->
 
         <!--start of space for changeable menu-->
         <div id="menu">
@@ -64,7 +52,7 @@
                 <button onclick="changeMenuRight()" class="menuButton" id="btnRight">
                     <i class="fa-solid fa-arrow-right fa-2xl" style="color: #000000;"></i>
                 </button>
-            </div> 
+            </div>
             <div class="indexIndicator">
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -148,7 +136,7 @@
                 </div>
             </div>
             <!--end of cookies menu, start of brownies menu-->
-            <div class="browniesMenu invisible">
+             <div class="browniesMenu invisible">
                 <div class="menuRow">
                     <div class="menuItem">
                         <p>Chocolate Fudge</p>
@@ -304,18 +292,18 @@
                 </div>
             </div>
             <!--end of drinks menu-->
-        </div> 
+        </div>
         <!--end of space for changeable menu-->
 
-        <hr>
-        <h1 id="gotoGallery">Gallery</h1>
+        <hr id="gotoGallery">
+        <h1>Gallery</h1>
         <hr>
 
         <!--start of space for gallery-->
         <!--images taken from pexels.com-->
         <div id="gallery">
-            <figure> <!--use of cafe images as placeholders from google reviews of https://www.scorpionheartsclub.com/-->
-                <div class="galleryRow">
+            <figure>
+                <div class="galleryContainer">
                     <img src="cafeImages/cafeGallery/scenery1.jpg" alt="Cafe entrance from outside">
                     <span class="vl"></span>
                     <img src="cafeImages/cafeGallery/scenery2.jpg" alt="Inside of cafe">
@@ -325,7 +313,7 @@
                 <figcaption>Enjoy the cozy and calm scenery of our cafe - inside or outside! &#9749</figcaption>
             </figure>
             <figure>
-                <div class="galleryRow">
+                <div class="galleryContainer">
                     <img src="cafeImages/cafeGallery/community1.jpg" alt="Person drinking at a table while on their phone">
                     <span class="vl"></span>
                     <img src="cafeImages/cafeGallery/community2.jpg" alt="Person enjoying drinks and latpop at a table">
@@ -335,7 +323,7 @@
                 <figcaption>Make our cafe a home for you and other community members! &#128516</figcaption>
             </figure>
             <figure>
-                <div class="galleryRow">
+                <div class="galleryContainer">
                     <img src="cafeImages/cafeGallery/food1.jpg" alt="Espresso artwork of a heart on a red table">
                     <span class="vl"></span>
                     <img src="cafeImages/cafeGallery/food2.jpg" alt="A couple enjoying espresso and desserts at a table">
@@ -345,7 +333,7 @@
                 <figcaption>Treat yourself with some sweets and a drink that'll melt your heart! &#10084</figcaption>
             </figure>
             <figure>
-                <div class="galleryRow">
+                <div class="galleryContainer">
                     <img src="cafeImages/cafeGallery/staff1.jpg" alt="Employees that were preparing beverages behind the counter face the camera">
                     <span class="vl"></span>
                     <img src="cafeImages/cafeGallery/staff2.jpg" alt="Employees preparing an order to go out">
@@ -357,19 +345,20 @@
         </div>
         <!--end of space for gallery-->
 
-        <hr>
-        <h1 id="gotoAboutUs">About Us</h1>
+        <hr id="gotoAboutUs">
+        <h1>About Us</h1>
         <hr>
 
         <!--start of about us space-->
         <div id="aboutUs">
+            <p class="aboutUsP">Originally coming from a background of finance and nursing, Julius Arroyo decided to enter the culinary world and establish Cafe Joyorra. His vision was to create a safe space for people to kick back, relax, enjoy delicious desserts, and most importantly come together as a community. Mr. Arroyo aims to bring the community closer together with a fun location that promotes communal engagement, generates positivity for all visitors, and contributes to the culture of the area.</p>
             <img id="ownerImage" src="cafeImages/profilePic.png">
-            <p class="aboutUsP">Originally coming from a background of finance and nursing, Julius Arroyo decided to enter the culinary world and establish Cafe Joyorra as a place for people kick back, relax, enjoy comforting desserts, and come together as a community. The charm of any good cafe is the combination of quality food and modest, yet cozy decorations. We care for people's comfort and always strive to have everyone at ease! The business' ideology is that if you're not comfortable with your environment, then you can't relax to the fullest. Our goal is to make you feel like you're at home - so much so that you may even be tempted to sleep right in our comforting lounge!</p>
+            <p class="aboutUsP quote">"We want to charm people with more than just the quality of our food and cozy decorations - we need to charm people with the community itself. The people that live here are very diverse with plenty of stories to tell, hobbies to share, and family and friends to introduce to others. Creating that portal for others to meet one another is a mission shared by both myself and my staff. We need to show everyone how many amazing people live just around the corner!"</p>
         </div>
         <!--end of about us space-->
 
-        <hr>
-        <h1 id="gotoNews">News</h1>
+        <hr id="gotoNews">
+        <h1>News</h1>
         <hr>
         <!--start of news space-->
         <div id="news">
@@ -424,7 +413,36 @@
             </div>
         </div>
         <!--end of news space-->
-    </div><!--end of main/dynamic content = 80% of screen-->
+
+        <!--cart occupies left side of screen, goes invisible and visible, placed below here to layer over everything else-->
+        <button id="cart" onclick="cartVisible()"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: #000000;"></i></button>
+        <div class="cartSidebar" id="cartSidebar">
+            <div id="itemsList">
+                <!-- will be filled by menu cart buttons (DO NOT REMOVE THIS COMMENT) -->
+                <div>Your cart is empty... Change that!</div>
+            </div>
+            <div id="displaySubTotal">$0.00</div>
+            <button onclick="checkout()" id="checkout">Checkout!</button>
+        </div>
+        <!--end of cart-->
+
+        <!--will be the footer that is relocated once entering 768px view-->
+        <footer id="navFooterMobile">
+            <ul class="footerMenuMobile">
+                <li><b>Address:</b> 92-05 Winchester Blvd., Queens Village, NY</li>
+                <li><b>Hours:</b> Monday-Saturday 6AM-11PM, Sunday 9AM-3PM</li>
+                <li><b>Call:</b> 347-572-4321</li>
+                <li><b>Socials:</b> <a href="https://twitter.com/home" target="_blank"><i class="fa-brands fa-twitter fa-sm" style="color: #000000;"></i> </a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-sm" style="color: #000000;"></i> </a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-sm" style="color: #000000;"></i></a>
+                </li>
+            </ul>
+            <iframe id="mapMobile" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.634549853865!2d-73.73898302340712!3d40.72606083675385!2m3!1f
+        0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2622e2213eb51%3A0x43c6fff9c1d428e7!2s92-05%20Winchester%20Blvd%2C%20Queens%2C%20NY%
+        2011428!5e0!3m2!1sen!2sus!4v1701105873711!5m2!1sen!2sus" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </footer>
+    </div><!--end of main/dynamic content = 80% of screen for desktop view-->
      
     <!--<i class="fa-solid fa-house" style="color: #000000;"></i>-->
 
