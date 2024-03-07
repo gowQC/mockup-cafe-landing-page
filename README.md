@@ -7,4 +7,4 @@ cafe that contains all the basic elements any landing page should have:
 - a gallery of the establishment along with pictures of the food served
 - an "About Us" section of the establishment
 - a news section dedicated to housing relevant stories regarding the cafe's communal impact onto an image slider on the page
-- responsive design is now applied to this project, allowing for anyone to view from small mobile devices (320px) to larger desktops (1201px +)
+- responsive design is now applied to this project, allowing for anyone to view from small mobile devices (320px) to larger desktops (1201px or higher)
